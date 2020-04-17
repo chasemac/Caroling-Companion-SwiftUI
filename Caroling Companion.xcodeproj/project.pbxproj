@@ -16,6 +16,11 @@
 		0EC784F02448DEBD00E7613F /* Caroling_CompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC784EF2448DEBD00E7613F /* Caroling_CompanionTests.swift */; };
 		0EC784FB2448DEBD00E7613F /* Caroling_CompanionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC784FA2448DEBD00E7613F /* Caroling_CompanionUITests.swift */; };
 		0EC785092448DF6100E7613F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EC785082448DF6100E7613F /* GoogleService-Info.plist */; };
+		0EC7850B24492C1D00E7613F /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7850A24492C1D00E7613F /* FUser.swift */; };
+		0EC7850F2449617300E7613F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC7850E2449617300E7613F /* Constants.swift */; };
+		0EC78511244A345500E7613F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC78510244A345500E7613F /* DataService.swift */; };
+		0EC78513244A41BC00E7613F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC78512244A41BC00E7613F /* Song.swift */; };
+		0EC78515244A500A00E7613F /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC78514244A500A00E7613F /* SongView.swift */; };
 		799797BFF7AE30ABB4194C53 /* Pods_Caroling_CompanionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5094917CDA29C8FD87D4655 /* Pods_Caroling_CompanionTests.framework */; };
 		A03880BB6990971204DC3F69 /* Pods_Caroling_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA2C57FCB11BBA25B2FB217 /* Pods_Caroling_Companion.framework */; };
 		FCDCA4091DC747E5122A4E21 /* Pods_Caroling_Companion_Caroling_CompanionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028C4B29BCAD2DAA578F822B /* Pods_Caroling_Companion_Caroling_CompanionUITests.framework */; };
@@ -55,6 +60,11 @@
 		0EC784FA2448DEBD00E7613F /* Caroling_CompanionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caroling_CompanionUITests.swift; sourceTree = "<group>"; };
 		0EC784FC2448DEBD00E7613F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EC785082448DF6100E7613F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EC7850A24492C1D00E7613F /* FUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
+		0EC7850E2449617300E7613F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0EC78510244A345500E7613F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		0EC78512244A41BC00E7613F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		0EC78514244A500A00E7613F /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		449C4AAB9810F56367C49801 /* Pods-Caroling CompanionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling CompanionTests.debug.xcconfig"; path = "Target Support Files/Pods-Caroling CompanionTests/Pods-Caroling CompanionTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F4376B5270DF9654CD5EC61 /* Pods-Caroling Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling Companion.release.xcconfig"; path = "Target Support Files/Pods-Caroling Companion/Pods-Caroling Companion.release.xcconfig"; sourceTree = "<group>"; };
 		56C0D3042CF34C151E418EBE /* Pods-Caroling Companion-Caroling CompanionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caroling Companion-Caroling CompanionUITests.release.xcconfig"; path = "Target Support Files/Pods-Caroling Companion-Caroling CompanionUITests/Pods-Caroling Companion-Caroling CompanionUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +154,9 @@
 				0EC784D82448DEBB00E7613F /* AppDelegate.swift */,
 				0EC784DA2448DEBB00E7613F /* SceneDelegate.swift */,
 				0EC784DC2448DEBB00E7613F /* ContentView.swift */,
+				0EC78514244A500A00E7613F /* SongView.swift */,
+				0EC7850D2449616700E7613F /* Helpers */,
+				0EC7850C2449615700E7613F /* Model */,
 				0EC784DE2448DEBD00E7613F /* Assets.xcassets */,
 				0EC784E32448DEBD00E7613F /* LaunchScreen.storyboard */,
 				0EC784E62448DEBD00E7613F /* Info.plist */,
@@ -177,6 +190,24 @@
 				0EC784FC2448DEBD00E7613F /* Info.plist */,
 			);
 			path = "Caroling CompanionUITests";
+			sourceTree = "<group>";
+		};
+		0EC7850C2449615700E7613F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EC7850A24492C1D00E7613F /* FUser.swift */,
+				0EC78512244A41BC00E7613F /* Song.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0EC7850D2449616700E7613F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0EC7850E2449617300E7613F /* Constants.swift */,
+				0EC78510244A345500E7613F /* DataService.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,9 +450,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EC78513244A41BC00E7613F /* Song.swift in Sources */,
+				0EC7850F2449617300E7613F /* Constants.swift in Sources */,
 				0EC784D92448DEBB00E7613F /* AppDelegate.swift in Sources */,
+				0EC78515244A500A00E7613F /* SongView.swift in Sources */,
 				0EC784DB2448DEBB00E7613F /* SceneDelegate.swift in Sources */,
+				0EC78511244A345500E7613F /* DataService.swift in Sources */,
 				0EC784DD2448DEBB00E7613F /* ContentView.swift in Sources */,
+				0EC7850B24492C1D00E7613F /* FUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

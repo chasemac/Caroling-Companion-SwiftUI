@@ -7,6 +7,8 @@ target 'Caroling Companion' do
 
   pod 'Firebase'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+
 
   # Pods for Caroling Companion
 
