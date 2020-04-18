@@ -10,8 +10,27 @@ import SwiftUI
 
 struct SongView: View {
     var song: Song
+    @Environment(\.presentationMode) var presentationMode
+    
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            Image("backArrowCreamColor")
+        }
+    }
+
     var body: some View {
-        Text(song.lyrics)
+        ScrollView {
+            Text(song.lyrics)
+                .multilineTextAlignment(.center)
+            .padding()
+            
+        }
+        .frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0, idealHeight: .infinity, maxHeight: .infinity, alignment: .center)
+        .background(Color.init(hex: "FDFCF6"))
+        .navigationBarTitle(Text(song.title), displayMode: .inline)
+    .navigationBarItems(leading: btnBack)
+    .navigationBarBackButtonHidden(true)
     }
 }
 

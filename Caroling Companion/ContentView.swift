@@ -12,26 +12,55 @@ import Firebase
 struct ContentView: View {
     @State var isLoggedIn = false
     @State var songList: [Song] = []
+    let redish = UIColor(red: 183/255, green: 79/255, blue: 79/255, alpha: 1)
     let user = FUser()
+    init() {
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        UINavigationBar.appearance().backgroundColor = redish
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            //            .font : UIFont(name:"Papyrus", size: 40)!]
+        ]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            //            .font : UIFont(name: "HelveticaNeue-Thin", size: 20)!
+        ]
+        UINavigationBar.appearance().barTintColor = redish
+        UINavigationBar.appearance().tintColor = UIColor(red: 253/255, green: 252/255, blue: 246/255, alpha: 1)
+        
+        
+    }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                List {
-                    ForEach(songList) { song in
-                        
-                        NavigationLink(destination: SongView(song: song)) {
-                            Text(song.title)
+        ZStack {
+            NavigationView {
+                VStack {
+                    List {
+                        ForEach(songList) { song in
+                            NavigationLink(destination: SongView(song: song)) {
+                                Text(song.title)
+                            }
                         }
-                        
                     }
                 }
+                .navigationBarTitle(
+                    Text("Caroling Companion")
+                        .foregroundColor(.blue)
+                )
+                //                .navigationBarColor(.green)
             }
-        .navigationBarTitle("Caroling Companion")
-        }
+                
+            .onAppear {
+                self.signInAnonymously()
+            }
+            .padding(.top, 50)
+            .edgesIgnoringSafeArea(.top)
+            .zIndex(1)
+            Color(redish)
+                .edgesIgnoringSafeArea(.top)
+                .zIndex(0)
             
-        .onAppear {
-            self.signInAnonymously()
         }
     }
     private func signInAnonymously() {
